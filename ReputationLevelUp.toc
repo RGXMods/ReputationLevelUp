@@ -9,6 +9,6 @@
 ## X-Curse-Project-ID: 605827
 ## X-Wago-ID: 5bGodqN0
 ## X-WoWI-ID: 26319
-## X-Website: https://github.com/DonnieDice/ReputationLevelUp
+## X-Website: https://github.com/RGXMods/ReputationLevelUp
 
 ReputationLevelUp.xml

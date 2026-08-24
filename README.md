@@ -66,7 +66,7 @@
 ---
 
 ## Installation
-1. Download the addon from [Curse](https://www.curseforge.com/wow/addons/reputationlevelup), [GitHub](https://github.com/DonnieDice/ReputationLevelUp), [Wago](https://addons.wago.io/addons/reputation-level-up), or [WoWInterface](https://www.wowinterface.com/downloads/info26319-RepUp.html).
+1. Download the addon from [Curse](https://www.curseforge.com/wow/addons/reputationlevelup), [GitHub](https://github.com/RGXMods/ReputationLevelUp), [Wago](https://addons.wago.io/addons/reputation-level-up), or [WoWInterface](https://www.wowinterface.com/downloads/info26319-RepUp.html).
 2. Extract the downloaded file to your World of Warcraft `Interface/AddOns` directory:
    - For **Dragonflight**: `World of Warcraft/_retail_/Interface/AddOns`
    - For **Classic Cataclysm**: `World of Warcraft/_classic_/Interface/AddOns`
@@ -97,6 +97,6 @@ Thank you for your support! 🙏
 - Follow me on [GitHub](https://github.com/donniedice) 🐙
 
 ### ⭐️ Show Your Support:
-- Star this project on [GitHub](https://github.com/DonnieDice/ReputationLevelUp) ⭐️
+- Star this project on [GitHub](https://github.com/RGXMods/ReputationLevelUp) ⭐️
 - Share it with your friends and colleagues 📢
 
