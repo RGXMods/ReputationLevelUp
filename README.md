@@ -7,7 +7,7 @@
 
 ## Features
 - **Reputation Ranks:** Enjoy sounds from other games when you gain reputation ranks.
-- **DragonFlight Renown:** *(Retail Only)* Hear sounds from other games when you gain DragonFlight renown reputation ranks.
+- **Renown Ranks:** *(Retail Only)* Hear sounds from other games when you gain renown reputation ranks.
 
 *Note: All sounds come with independent volume adjustment capability.*
 
@@ -59,17 +59,17 @@
 ---
 
 ## Compatibility
-- **Dragonflight**
-- **Classic WoW** (Season of Discovery, Classic Hardcore)
-- **Classic Cataclysm**
+- **Midnight (Retail)** — interface `120007`
+- **Classic WoW** (Season of Discovery, Classic Hardcore) — interface `11508`
+- **Cataclysm Classic** — interface `40402`
 
 ---
 
 ## Installation
 1. Download the addon from [Curse](https://www.curseforge.com/wow/addons/reputationlevelup), [GitHub](https://github.com/RGXMods/ReputationLevelUp), or [Wago](https://addons.wago.io/addons/reputation-level-up).
 2. Extract the downloaded file to your World of Warcraft `Interface/AddOns` directory:
-   - For **Dragonflight**: `World of Warcraft/_retail_/Interface/AddOns`
-   - For **Classic Cataclysm**: `World of Warcraft/_classic_/Interface/AddOns`
+   - For **Midnight (Retail)**: `World of Warcraft/_retail_/Interface/AddOns`
+   - For **Cataclysm Classic**: `World of Warcraft/_classic_/Interface/AddOns`
    - For **Classic WoW** (Season of Discovery, Classic Hardcore): `World of Warcraft/_classic_era_/Interface/AddOns`
 3. Restart World of Warcraft and enable the addon in the Addons menu.
 
