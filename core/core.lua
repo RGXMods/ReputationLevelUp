@@ -2,7 +2,7 @@ local addonName = ...
 
 RLU = {
     name = addonName or "ReputationLevelUp",
-    version = "v4.0.0",
+    version = "v4.0.4",
     Modules = {},
     LoadedModules = {},
     events = {},

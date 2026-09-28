@@ -1,4 +1,4 @@
-﻿## Interface: 40402
+﻿## Interface: 38002
 ## Version: v4.0.4
 ## Title: Reputation |cff3bbc00L|r|cffffffffevel-|cff3bbc00U|r|cffffffffp|cff3bbc00!|r
 ## Notes: Configure reputation rank-up sounds with granular per-faction control.  |n|r  |cff3bbc00/rlu -|r Open options panel  |n|r   |cff3bbc00By DonnieDice|r
