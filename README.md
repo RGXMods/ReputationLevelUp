@@ -59,9 +59,13 @@
 ---
 
 ## Compatibility
-- **Midnight (Retail)** — interface `120007`
-- **Classic WoW** (Season of Discovery, Classic Hardcore) — interface `11508`
+- **Midnight (Retail)** — interface `120100`
+- **WoW Forever (Beta)** — interface `16001`
+- **Mists of Pandaria Classic** — interface `50504`
 - **Cataclysm Classic** — interface `40402`
+- **Wrath of the Lich King Classic** — interface `38002`
+- **Burning Crusade Classic** — interface `20506`
+- **Classic WoW** (Season of Discovery, Classic Hardcore) — interface `11509`
 
 ---
 
