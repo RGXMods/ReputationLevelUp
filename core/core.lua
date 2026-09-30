@@ -176,6 +176,6 @@ function RLU:ShowWelcomeMessage()
     end
 
     local version = self:GetMetadata("Version") or self.version or "Unknown"
-    self:Print("Ready. Use |cffffffff/rlu|r to open options or |cffffffff/rlu help|r for commands.")
-    self:Print("|cffffff00Version:|r |cff8080ff" .. version .. "|r")
+    self:Print(self:Locale("WELCOME"))
+    self:Print("|cffffff00" .. self:Locale("VERSION_PREFIX") .. ":|r |cff8080ff" .. version .. "|r")
 end

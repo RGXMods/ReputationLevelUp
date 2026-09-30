@@ -9,7 +9,7 @@ function RLU:HandleSlashCommand(input)
     end
 
     if input == "help" then
-        self:Print("Commands: |cffffffff/rlu|r, |cffffffff/rlu help|r, |cffffffff/rlu test|r, |cffffffff/rlu debug|r, |cffffffff/rlu welcome|r, |cffffffff/rlu status|r")
+        self:Print(self:Locale("HELP_COMMANDS"))
         return
     end
 
@@ -17,9 +17,9 @@ function RLU:HandleSlashCommand(input)
         local enabled = self:ToggleSetting("debugMode")
         self.debugMode = enabled
         if enabled then
-            self:Print("Debug mode |cff00ff00enabled|r.")
+            self:Print(self:Locale("DEBUG_ENABLED"))
         else
-            self:Print("Debug mode |cffff0000disabled|r.")
+            self:Print(self:Locale("DEBUG_DISABLED"))
         end
         return
     end
@@ -27,16 +27,16 @@ function RLU:HandleSlashCommand(input)
     if input == "welcome" then
         local enabled = self:ToggleSetting("showWelcomeMessage")
         if enabled then
-            self:Print("Login message |cff00ff00enabled|r.")
+            self:Print(self:Locale("LOGIN_ENABLED"))
         else
-            self:Print("Login message |cffff0000disabled|r.")
+            self:Print(self:Locale("LOGIN_DISABLED"))
         end
         return
     end
 
     if input == "status" then
-        self:Print("Selected expansion: |cffffffff" .. (self:GetSelectedExpansion().label or "Unknown") .. "|r")
-        self:Print("Default sound: |cffffffff" .. self:GetSoundLabel(self:GetSetting("defaultSoundId")) .. "|r (" .. self:FormatQualityLabel(self:GetSetting("defaultSoundQuality")) .. ")")
+        self:Print(self:Locale("STATUS_SELECTED_EXPANSION") .. "|cffffffff" .. (self:GetSelectedExpansion().label or self:Locale("QUALITY_UNKNOWN")) .. "|r")
+        self:Print(self:Locale("STATUS_DEFAULT_SOUND") .. "|cffffffff" .. self:GetSoundLabel(self:GetSetting("defaultSoundId")) .. "|r (" .. self:FormatQualityLabel(self:GetSetting("defaultSoundQuality")) .. ")")
         return
     end
 
