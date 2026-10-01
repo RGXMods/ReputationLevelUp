@@ -9,5 +9,6 @@
 ## X-Curse-Project-ID: 605827
 ## X-Wago-ID: 5bGodqN0
 ## X-Website: https://github.com/RGXMods/ReputationLevelUp
+## X-Localizations: enUS, deDE, esES, esMX, frFR, itIT, koKR, ptBR, ptPT, ruRU, zhCN, zhTW
 
 ReputationLevelUp.xml

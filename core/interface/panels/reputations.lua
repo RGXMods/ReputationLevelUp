@@ -15,7 +15,7 @@ local function OpenAssignmentMenu(panel, anchor, faction)
             notCheckable = true,
         },
         {
-            text = "Use default assignment",
+            text = RLU:Locale("USE_DEFAULT_ASSIGNMENT"),
             notCheckable = true,
             func = function()
                 RLU:ClearReputationAssignment(faction.id)
@@ -23,13 +23,13 @@ local function OpenAssignmentMenu(panel, anchor, faction)
             end,
         },
         {
-            text = "Sound Packs",
+            text = RLU:Locale("SOUND_PACKS"),
             notCheckable = true,
             hasArrow = true,
             menuList = {},
         },
         {
-            text = "Quality",
+            text = RLU:Locale("QUALITY"),
             notCheckable = true,
             hasArrow = true,
             menuList = {},
@@ -38,7 +38,7 @@ local function OpenAssignmentMenu(panel, anchor, faction)
 
     for _, sound in RLU:IterateSounds() do
         menu[3].menuList[#menu[3].menuList + 1] = {
-            text = sound.label,
+            text = RLU:GetSoundLabel(sound.id),
             notCheckable = false,
             checked = assignment.soundId == sound.id,
             func = function()
@@ -79,14 +79,14 @@ end
 
 function RLU.CreateReputationsPanel(panel)
     local expansions = RLU:GetExpansionGroups(true)
-    local section = RLU.CreateSection(panel, "Reputations")
+    local section = RLU.CreateSection(panel, RLU:Locale("REPUTATIONS"))
     section:SetPoint("TOPLEFT", 12, -12)
     section:SetPoint("TOPRIGHT", -12, -12)
     section:SetPoint("BOTTOMRIGHT", -12, 12)
 
     local intro = section.content:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
     intro:SetPoint("TOPLEFT", 0, 0)
-    intro:SetText("Reputations are grouped by expansion. Each faction can override the default reputation sound with its own pack and quality.")
+    intro:SetText(RLU:Locale("REPUTATIONS_INTRO"))
 
     local listFrame = CreateFrame("Frame", nil, section.content)
     listFrame:SetPoint("TOPLEFT", intro, "BOTTOMLEFT", 0, -16)
@@ -137,12 +137,12 @@ function RLU.CreateReputationsPanel(panel)
         row.assignButton = CreateFrame("Button", nil, row, "UIPanelButtonTemplate")
         row.assignButton:SetSize(80, 22)
         row.assignButton:SetPoint("RIGHT", -90, 0)
-        row.assignButton:SetText("Assign")
+        row.assignButton:SetText(RLU:Locale("ASSIGN"))
 
         row.testButton = CreateFrame("Button", nil, row, "UIPanelButtonTemplate")
         row.testButton:SetSize(60, 22)
         row.testButton:SetPoint("RIGHT", -12, 0)
-        row.testButton:SetText("Test")
+        row.testButton:SetText(RLU:Locale("TEST"))
 
         rows[index] = row
     end

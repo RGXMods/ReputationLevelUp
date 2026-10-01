@@ -3,7 +3,7 @@ local RLU = _G["RLU"]
 function RLU.CreateSimpleButton(parent, text, width, height)
     local button = CreateFrame("Button", nil, parent, "UIPanelButtonTemplate")
     button:SetSize(width or 120, height or 24)
-    button:SetText(text or "Button")
+    button:SetText(text or RLU:Locale("BUTTON_FALLBACK"))
     return button
 end
 
@@ -29,7 +29,7 @@ end
 function RLU.CreateCheckbox(parent, label, initialValue, onClick)
     local checkbox = CreateFrame("CheckButton", nil, parent, "UICheckButtonTemplate")
     checkbox:SetChecked(initialValue and true or false)
-    checkbox.text:SetText(label or "Checkbox")
+    checkbox.text:SetText(label or RLU:Locale("CHECKBOX_FALLBACK"))
     checkbox:SetScript("OnClick", function(self)
         if onClick then
             onClick(self:GetChecked())

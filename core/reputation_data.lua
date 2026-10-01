@@ -3,7 +3,7 @@ local RLU = _G["RLU"]
 local FALLBACK_EXPANSIONS = {
     {
         id = "current",
-        label = "Current Expansion",
+        labelKey = "EXPANSION_CURRENT",
         reputations = {
             { id = 2590, name = "Council of Dornogal" },
             { id = 2594, name = "Assembly of the Deeps" },
@@ -13,7 +13,7 @@ local FALLBACK_EXPANSIONS = {
     },
     {
         id = "dragonflight",
-        label = "Dragonflight",
+        labelKey = "EXPANSION_DRAGONFLIGHT",
         reputations = {
             { id = 2507, name = "Dragonscale Expedition" },
             { id = 2510, name = "Valdrakken Accord" },
@@ -23,7 +23,7 @@ local FALLBACK_EXPANSIONS = {
     },
     {
         id = "shadowlands",
-        label = "Shadowlands",
+        labelKey = "EXPANSION_SHADOWLANDS",
         reputations = {
             { id = 2413, name = "Court of Harvesters" },
             { id = 2465, name = "The Wild Hunt" },
@@ -33,7 +33,7 @@ local FALLBACK_EXPANSIONS = {
     },
     {
         id = "battle_for_azeroth",
-        label = "Battle for Azeroth",
+        labelKey = "EXPANSION_BFA",
         reputations = {
             { id = 2164, name = "Champions of Azeroth" },
             { id = 2163, name = "Tortollan Seekers" },
@@ -43,7 +43,7 @@ local FALLBACK_EXPANSIONS = {
     },
     {
         id = "legion",
-        label = "Legion",
+        labelKey = "EXPANSION_LEGION",
         reputations = {
             { id = 1883, name = "Dreamweavers" },
             { id = 1828, name = "Highmountain Tribe" },
@@ -53,7 +53,7 @@ local FALLBACK_EXPANSIONS = {
     },
     {
         id = "classic",
-        label = "Classic",
+        labelKey = "EXPANSION_CLASSIC",
         reputations = {
             { id = 72, name = "Stormwind" },
             { id = 76, name = "Orgrimmar" },
@@ -94,7 +94,7 @@ end
 
 local function NormalizeHeaderName(name)
     if type(name) ~= "string" or name == "" then
-        return "Other"
+        return RLU:Locale("EXPANSION_OTHER")
     end
     return name
 end
@@ -116,7 +116,9 @@ end
 local function BuildFallbackCatalog()
     local expansions = {}
     for _, expansion in ipairs(FALLBACK_EXPANSIONS) do
-        expansions[#expansions + 1] = CloneTable(expansion)
+        local entry = CloneTable(expansion)
+        entry.label = RLU:Locale(expansion.labelKey or "EXPANSION_CURRENT")
+        expansions[#expansions + 1] = entry
     end
     return expansions
 end
@@ -223,7 +225,7 @@ local function BuildLiveCatalog()
                 if not currentExpansion then
                     currentExpansion = {
                         id = "other",
-                        label = "Other",
+                        label = RLU:Locale("EXPANSION_OTHER"),
                         reputations = {},
                     }
                     expansionMap.other = currentExpansion

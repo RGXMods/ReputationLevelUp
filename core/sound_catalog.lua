@@ -1,7 +1,7 @@
 local RLU = _G["RLU"]
 
 local SOUND_DEFINITIONS = {
-    { id = "rep_default", label = "Default Reputation" },
+    { id = "rep_default", label = "Default Reputation" }, -- display label overridden at runtime with L.SOUND_DEFAULT_REPUTATION
     { id = "pokemon", label = "Pokemon" },
     { id = "final_fantasy", label = "Final Fantasy" },
     { id = "fire_emblem", label = "Fire Emblem" },
@@ -58,14 +58,18 @@ local SOUND_DEFINITIONS = {
 
 RLU.SoundCatalog = {
     defaultSoundId = "rep_default",
-    qualityLabels = {
-        low = "Low",
-        med = "Medium",
-        high = "High",
-    },
     items = {},
     order = {},
 }
+
+function RLU:GetQualityLabel(quality)
+    if quality == "low" then
+        return self:Locale("QUALITY_LOW")
+    elseif quality == "high" then
+        return self:Locale("QUALITY_HIGH")
+    end
+    return self:Locale("QUALITY_MED")
+end
 
 local function BuildPath(id, quality)
     return "Interface\\AddOns\\ReputationLevelUp\\sounds\\" .. id .. "_" .. quality .. ".ogg"
@@ -92,7 +96,11 @@ end
 
 function RLU:GetSoundInfo(soundId)
     local catalog = self:GetSoundCatalog()
-    return catalog.items[soundId or catalog.defaultSoundId] or catalog.items[catalog.defaultSoundId]
+    local sound = catalog.items[soundId or catalog.defaultSoundId] or catalog.items[catalog.defaultSoundId]
+    if sound and sound.id == catalog.defaultSoundId then
+        sound.label = self:Locale("SOUND_DEFAULT_REPUTATION")
+    end
+    return sound
 end
 
 function RLU:GetSoundFile(soundId, quality)

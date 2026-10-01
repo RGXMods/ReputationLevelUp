@@ -69,6 +69,11 @@
 
 ---
 
+## Language Support
+Reputation Level Up! ships translations for every World of Warcraft client language: English (enUS), German (deDE), European and Mexican Spanish (esES, esMX), French (frFR), Italian (itIT), Korean (koKR), Brazilian and European Portuguese (ptBR, ptPT), Russian (ruRU), and both Chinese variants (zhCN, zhTW). All user-visible strings — options panel, slash-command output, and status messages — are localized, and any key a locale does not override falls back to the English base text.
+
+---
+
 ## Installation
 1. Download the addon from [Curse](https://www.curseforge.com/wow/addons/reputationlevelup), [GitHub](https://github.com/RGXMods/ReputationLevelUp), or [Wago](https://addons.wago.io/addons/reputation-level-up).
 2. Extract the downloaded file to your World of Warcraft `Interface/AddOns` directory:

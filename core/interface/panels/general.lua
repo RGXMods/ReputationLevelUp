@@ -3,7 +3,7 @@ local RLU = _G["RLU"]
 local function BuildDefaultSoundDropdown(parent, yOffset, panel)
     local label = parent:CreateFontString(nil, "OVERLAY", "GameFontNormal")
     label:SetPoint("TOPLEFT", 4, yOffset)
-    label:SetText("Default reputation sound")
+    label:SetText(RLU:Locale("DEFAULT_SOUND"))
 
     local dropdown = CreateFrame("Frame", "RLUDefaultSoundDropdown", parent, "UIDropDownMenuTemplate")
     dropdown:SetPoint("TOPLEFT", label, "BOTTOMLEFT", -16, -6)
@@ -14,11 +14,12 @@ local function BuildDefaultSoundDropdown(parent, yOffset, panel)
 
         for _, sound in RLU:IterateSounds() do
             local info = UIDropDownMenu_CreateInfo()
-            info.text = sound.label
+            local soundLabel = RLU:GetSoundLabel(sound.id)
+            info.text = soundLabel
             info.checked = RLU:GetSetting("defaultSoundId") == sound.id
             info.func = function()
                 RLU:SetSetting("defaultSoundId", sound.id)
-                UIDropDownMenu_SetText(dropdown, sound.label)
+                UIDropDownMenu_SetText(dropdown, RLU:GetSoundLabel(sound.id))
                 if panel and panel.RefreshGeneral then
                     panel:RefreshGeneral()
                 end
@@ -38,7 +39,7 @@ local function BuildQualitySlider(parent, yOffset, panel)
 
     local title = container:CreateFontString(nil, "OVERLAY", "GameFontNormal")
     title:SetPoint("TOPLEFT", 0, 0)
-    title:SetText("Default quality")
+    title:SetText(RLU:Locale("DEFAULT_QUALITY"))
 
     local slider = CreateFrame("Slider", nil, container, "OptionsSliderTemplate")
     slider:SetPoint("TOPLEFT", title, "BOTTOMLEFT", 0, -6)
@@ -89,7 +90,7 @@ local function BuildQualitySlider(parent, yOffset, panel)
 end
 
 function RLU.CreateGeneralPanel(panel)
-    local section = RLU.CreateSection(panel, "General")
+    local section = RLU.CreateSection(panel, RLU:Locale("GENERAL"))
     section:SetPoint("TOPLEFT", 12, -12)
     section:SetPoint("TOPRIGHT", -12, -12)
     section:SetPoint("BOTTOMRIGHT", -12, 12)
@@ -98,14 +99,14 @@ function RLU.CreateGeneralPanel(panel)
     title:SetPoint("TOPLEFT", 0, 0)
     title:SetWidth(620)
     title:SetJustifyH("LEFT")
-    title:SetText("ReputationLevelUp v4 uses a BLU-style self-contained setup with live faction grouping and granular per-faction sound assignments.")
+    title:SetText(RLU:Locale("GENERAL_INTRO"))
 
-    local welcome = RLU.CreateCheckbox(section.content, "Show login message", RLU:GetSetting("showWelcomeMessage"), function(checked)
+    local welcome = RLU.CreateCheckbox(section.content, RLU:Locale("SHOW_LOGIN_MESSAGE"), RLU:GetSetting("showWelcomeMessage"), function(checked)
         RLU:SetSetting("showWelcomeMessage", checked and true or false)
     end)
     welcome:SetPoint("TOPLEFT", title, "BOTTOMLEFT", -4, -18)
 
-    local debug = RLU.CreateCheckbox(section.content, "Enable debug mode", RLU:GetSetting("debugMode"), function(checked)
+    local debug = RLU.CreateCheckbox(section.content, RLU:Locale("ENABLE_DEBUG_MODE"), RLU:GetSetting("debugMode"), function(checked)
         RLU:SetSetting("debugMode", checked and true or false)
         RLU.debugMode = checked and true or false
     end)
@@ -115,7 +116,7 @@ function RLU.CreateGeneralPanel(panel)
     local qualityControl = BuildQualitySlider(section.content, -200, panel)
     qualityControl:SetPoint("TOPLEFT", defaultDropdown, "BOTTOMLEFT", 16, -18)
 
-    local testButton = RLU.CreateSimpleButton(section.content, "Test Default", 100, 24)
+    local testButton = RLU.CreateSimpleButton(section.content, RLU:Locale("TEST_DEFAULT"), 100, 24)
     testButton:SetPoint("TOPLEFT", qualityControl, "BOTTOMLEFT", -4, -18)
     testButton:SetScript("OnClick", function()
         local module = RLU.Modules and RLU.Modules.reputation
@@ -132,10 +133,10 @@ function RLU.CreateGeneralPanel(panel)
     status:SetPoint("LEFT", testButton, "RIGHT", 12, 0)
     status:SetWidth(420)
     status:SetJustifyH("LEFT")
-    status:SetText("Current default: |cff3bbc00" .. RLU:GetSoundLabel(RLU:GetSetting("defaultSoundId")) .. "|r / " .. RLU:FormatQualityLabel(RLU:GetSetting("defaultSoundQuality")))
+    status:SetText(RLU:Locale("CURRENT_DEFAULT") .. "|cff3bbc00" .. RLU:GetSoundLabel(RLU:GetSetting("defaultSoundId")) .. "|r / " .. RLU:FormatQualityLabel(RLU:GetSetting("defaultSoundQuality")))
 
     panel.RefreshGeneral = function()
         UIDropDownMenu_SetText(defaultDropdown, RLU:GetSoundLabel(RLU:GetSetting("defaultSoundId")))
-        status:SetText("Current default: |cff3bbc00" .. RLU:GetSoundLabel(RLU:GetSetting("defaultSoundId")) .. "|r / " .. RLU:FormatQualityLabel(RLU:GetSetting("defaultSoundQuality")))
+        status:SetText(RLU:Locale("CURRENT_DEFAULT") .. "|cff3bbc00" .. RLU:GetSoundLabel(RLU:GetSetting("defaultSoundId")) .. "|r / " .. RLU:FormatQualityLabel(RLU:GetSetting("defaultSoundQuality")))
     end
 end

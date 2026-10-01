@@ -6,7 +6,7 @@ function RLU:CreateOptionsPanel()
     end
 
     local panel = CreateFrame("Frame", "RLUOptionsPanel", UIParent, "BackdropTemplate")
-    panel.name = "Reputation Level Up!"
+    panel.name = self:Locale("PANEL_NAME")
     panel.settingsCategoryName = "|TInterface\\AddOns\\ReputationLevelUp\\media\\Textures\\icon:16:16:0:0|t |cff3bbc00R|r|cffffffffeputation |cff3bbc00L|r|cffffffffevel-|cff3bbc00U|r|cffffffffp|cff3bbc00!|r"
     self.OptionsPanel = panel
 
@@ -32,11 +32,11 @@ function RLU:CreateOptionsPanel()
 
     local title = header:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
     title:SetPoint("LEFT", icon, "RIGHT", 10, 6)
-    title:SetText("|cff3bbc00R|r|cffffffffeputation |cff3bbc00L|r|cffffffffevel-|cff3bbc00U|r|cffffffffp|cff3bbc00!|r")
+    title:SetText(self:Locale("OPTIONS_TITLE"))
 
     local subtitle = header:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
     subtitle:SetPoint("TOPLEFT", title, "BOTTOMLEFT", 0, -4)
-    subtitle:SetText("BLU-style v4 rewrite with expansion-grouped reputation sound assignment")
+    subtitle:SetText(self:Locale("OPTIONS_SUBTITLE"))
     subtitle:SetTextColor(unpack(self.Brand.colors.muted))
 
     local tabs = {}
