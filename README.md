@@ -86,26 +86,26 @@ Reputation Level Up! ships translations for every World of Warcraft client langu
 
 ## Support the Project
 
-### ☕️ Buy Me a Coffee
+### Buy Me a Coffee
 If you found this project helpful or enjoyable, you can support my work by buying me a coffee. Your support keeps this project alive and motivates me to create more!
 
-[![Buy Me a Coffee](https://img.shields.io/badge/☕️-Buy%20Me%20a%20Coffee-orange?style=flat-square&logo=buy-me-a-coffee)](https://www.buymeacoffee.com/donniedice)
+[![Buy Me a Coffee](https://img.shields.io/badge/-Buy%20Me%20a%20Coffee-orange?style=flat-square&logo=buy-me-a-coffee)](https://www.buymeacoffee.com/donniedice)
 
 ### Your Support Helps:
-- 🛠️ Maintain and improve the project.
-- 🚀 Add new features.
-- 🐛 Fix bugs.
-- 📚 Write detailed documentation.
+- Maintain and improve the project.
+- Add new features.
+- Fix bugs.
+- Write detailed documentation.
 
-Thank you for your support! 🙏
+Thank you for your support! 
 
-### 💸 Other Ways to Support:
+### Other Ways to Support:
 [![Donate via CashApp](https://img.shields.io/static/v1?label=Donate&message=CashApp&color=brightgreen)](https://bit.ly/3fyxxSU)
 
-### 💬 Stay in Touch:
-- Follow me on [GitHub](https://github.com/donniedice) 🐙
+### Stay in Touch:
+- Follow me on [GitHub](https://github.com/donniedice) 
 
-### ⭐️ Show Your Support:
-- Star this project on [GitHub](https://github.com/RGXMods/ReputationLevelUp) ⭐️
-- Share it with your friends and colleagues 📢
+### Show Your Support:
+- Star this project on [GitHub](https://github.com/RGXMods/ReputationLevelUp) 
+- Share it with your friends and colleagues 
 
