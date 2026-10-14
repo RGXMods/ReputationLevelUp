@@ -75,7 +75,7 @@ Reputation Level Up! ships translations for every World of Warcraft client langu
 ---
 
 ## Installation
-1. Download the addon from [Curse](https://www.curseforge.com/wow/addons/reputationlevelup), [GitHub](https://github.com/RGXMods/ReputationLevelUp), or [Wago](https://addons.wago.io/addons/reputation-level-up).
+1. Download the addon from [Curse](https://www.curseforge.com/wow/addons/reputationlevelup), [GitHub](https://github.com/RGXMods/ReputationLevelUp), or [Wago](https://addons.wago.io/addons/rep-up).
 2. Extract the downloaded file to your World of Warcraft `Interface/AddOns` directory:
    - For **Midnight (Retail)**: `World of Warcraft/_retail_/Interface/AddOns`
    - For **Cataclysm Classic**: `World of Warcraft/_classic_/Interface/AddOns`
