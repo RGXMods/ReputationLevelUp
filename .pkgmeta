@@ -1,6 +1,10 @@
 package-as: ReputationLevelUp
 manual-changelog: docs/CHANGES.md
 ignore:
+  - .ci
+  - scripts
+  - .gitlab
+  - .gitlab-ci.yml
   - .github
   - .gitignore
   - .pkgmeta
